@@ -25,11 +25,22 @@ function Require-Command($name) {
     }
 }
 
+function Test-Gh([string[]]$Arguments) {
+    $oldPreference = $ErrorActionPreference
+    $ErrorActionPreference = 'SilentlyContinue'
+    try {
+        & gh @Arguments 1>$null 2>$null
+        $code = $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $oldPreference
+    }
+    return $code -eq 0
+}
+
 Set-ProxyFromWindows
 Require-Command gh
 
-gh auth status --hostname github.com *> $null
-if ($LASTEXITCODE -ne 0) {
+if (-not (Test-Gh @('auth','status','--hostname','github.com'))) {
     Write-Host 'GitHub CLI is not logged in. Starting browser login.'
     gh auth login --hostname github.com --web --git-protocol https --scopes repo
 }
@@ -39,8 +50,7 @@ if ($Login -ne $RequiredUser) {
     throw "Current GitHub user is $Login, expected $RequiredUser. Stopped."
 }
 
-gh repo view $Repo *> $null
-if ($LASTEXITCODE -ne 0) {
+if (-not (Test-Gh @('repo','view',$Repo))) {
     throw "Repository not found: $Repo"
 }
 
@@ -54,8 +64,7 @@ foreach ($version in $Versions) {
         throw "Missing release notes for $version"
     }
 
-    gh release view $version --repo $Repo *> $null
-    if ($LASTEXITCODE -eq 0) {
+    if (Test-Gh @('release','view',$version,'--repo',$Repo)) {
         gh release edit $version --repo $Repo --title $version --notes-file $notes
         gh release upload $version $asset --repo $Repo --clobber
         Write-Host "Updated release: $version"

@@ -1,0 +1,23 @@
+{
+  "napcat_ws_url": "ws://127.0.0.1:3001",
+  "access_token": "",
+  "group_id": 0,
+  "sender_qqs": [],
+  "sender_names": [],
+  "keywords": [
+    "英雄舰认证已上架"
+  ],
+  "keyword_match": "all",
+  "ignore_case": true,
+  "callback_url": "",
+  "callback_bearer_token": "",
+  "callback_timeout_ms": 1500,
+  "reconnect_seconds": 1,
+  "dedupe_cache_size": 2000,
+  "automation_enabled": false,
+  "game_process_name": "infinite_lagrange_cn",
+  "expected_client_width": 1,
+  "expected_client_height": 1,
+  "focus_wait_ms": 150,
+  "click_steps": []
+}

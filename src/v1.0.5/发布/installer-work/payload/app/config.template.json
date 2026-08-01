@@ -1,0 +1,33 @@
+{
+  "napcat_ws_url": "ws://127.0.0.1:3001",
+  "access_token": "",
+  "group_id": 152636120,
+  "sender_qqs": [
+    106589552,
+    2506203512,
+    3263551389,
+    3138688930,
+    1790835534,
+    3125855712
+  ],
+  "sender_names": [
+    "请确保自己知晓公告所有内容"
+  ],
+  "keywords": [
+    "英雄舰认证"
+  ],
+  "keyword_match": "all",
+  "ignore_case": true,
+  "callback_url": "",
+  "callback_bearer_token": "",
+  "callback_timeout_ms": 1500,
+  "reconnect_seconds": 1,
+  "dedupe_cache_size": 2000,
+  "trigger_cooldown_ms": 3000,
+  "automation_enabled": false,
+  "game_process_name": "infinite_lagrange_cn",
+  "expected_client_width": 0,
+  "expected_client_height": 0,
+  "focus_wait_ms": 150,
+  "click_steps": []
+}

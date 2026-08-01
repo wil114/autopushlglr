@@ -1,0 +1,8 @@
+﻿bin/
+obj/
+*.user
+*.suo
+日志/
+已清除记录/
+点击位置待确认.json
+config.json

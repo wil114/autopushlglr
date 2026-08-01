@@ -6,6 +6,7 @@ QQ/NapCat 关键词监听 + 固定坐标点击工具。
 
 - `src/v1.0.0` 到 `src/v1.0.6`：各正式版本源码快照。
 - `installers/v1.0.0` 到 `installers/v1.0.6`：各正式版本安装包。
+- 版本下载页：<https://github.com/wil114/autopushlglr/releases>
 
 ## 注意
 
